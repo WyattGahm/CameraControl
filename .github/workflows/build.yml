@@ -28,10 +28,9 @@ jobs:
           sparse-checkout: iPhoneOS14.5.sdk
           path: theos/sdks
 
-      - name: Build Aster
+      - name: Build Tweak
         run: |
           brew install make ldid
-          THEOS=theos gmake clean package TARGET="iphone:clang:14.5:14.0" FINALPACKAGE=1
           THEOS=theos gmake clean package TARGET="iphone:clang:14.5:14.0" FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
       - name: Upload a Build Artifact
