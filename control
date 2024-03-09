@@ -1,0 +1,9 @@
+Package: dev.no5up.cameracontrol
+Name: CameraControl
+Version: 1.2.0
+Depends: mobilesubstrate, com.opa334.ccsupport
+Architecture: iphoneos-arm64
+Description: KM Camera Tool!
+Maintainer: no5up
+Author: no5up
+Section: Tweaks
