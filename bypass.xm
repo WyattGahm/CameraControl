@@ -94,5 +94,5 @@ void updateAll(){
 %end
 
 %ctor{
-  //CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)updateAll, CFSTR("dev.no5up.cameracontrol.update"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)updateAll, CFSTR("dev.no5up.cameracontrol.update"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
