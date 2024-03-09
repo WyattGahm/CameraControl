@@ -1,4 +1,4 @@
-export ARCHS = arm64e
+export ARCHS = arm64e arm64
 
 THEOS_PACKAGE_SCHEME=rootless
 
