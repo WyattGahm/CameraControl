@@ -34,7 +34,7 @@ void updateAll(){
   //[self.hiddenBack removeObject:input];
   %orig;
 }
-
+/*
 -(void)addInput:(AVCaptureDeviceInput*)input {
   if (![sessions containsObject:self]) [sessions addObject:self];
   if(!self.hiddenFront){
@@ -55,7 +55,7 @@ void updateAll(){
   }
   %orig;
 }
-
+*/
 -(BOOL)frontCameraEnabled{
   return [[NSFileManager defaultManager] fileExistsAtPath:FRONT_PATH];
 }
@@ -101,6 +101,11 @@ void updateAll(){
 
 %end
 
+%hook AVCaptureFigVideoDevice
+-(BOOL)isConnected{
+  return [[NSFileManager defaultManager] fileExistsAtPath:BACK_PATH];
+}
+%end
 %ctor{
   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)updateAll, CFSTR("dev.no5up.cameracontrol.update"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
