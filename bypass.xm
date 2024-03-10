@@ -4,7 +4,7 @@
 
 #define BACK_PATH @"/var/mobile/Library/Preferences/dev.no5up.disablebackcamera"
 #define FRONT_PATH @"/var/mobile/Library/Preferences/dev.no5up.disablefrontcamera"
-
+/*
 @interface AVCaptureSession(CameraControl)
 @property (nonatomic, retain) NSMutableArray *hiddenFront;
 @property (nonatomic, retain) NSMutableArray *hiddenBack;
@@ -34,7 +34,7 @@ void updateAll(){
   //[self.hiddenBack removeObject:input];
   %orig;
 }
-/*
+
 -(void)addInput:(AVCaptureDeviceInput*)input {
   if (![sessions containsObject:self]) [sessions addObject:self];
   if(!self.hiddenFront){
@@ -55,7 +55,7 @@ void updateAll(){
   }
   %orig;
 }
-*/
+
 -(BOOL)frontCameraEnabled{
   return [[NSFileManager defaultManager] fileExistsAtPath:FRONT_PATH];
 }
@@ -100,12 +100,12 @@ void updateAll(){
 }
 
 %end
-
+*/
 %hook AVCaptureFigVideoDevice
 -(BOOL)isConnected{
   return [[NSFileManager defaultManager] fileExistsAtPath:BACK_PATH];
 }
 %end
 %ctor{
-  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)updateAll, CFSTR("dev.no5up.cameracontrol.update"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+  //CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)updateAll, CFSTR("dev.no5up.cameracontrol.update"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
