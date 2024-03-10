@@ -70,7 +70,11 @@ void updateAll(){
   if(self.hiddenFront){
     if(self.frontCameraEnabled){
       for(AVCaptureDeviceInput* input in self.hiddenFront){
-        if([self canAddInput: input]) [self addInput: input];
+        @try{
+          [self addInput: input];
+        }@catch(id anException) {
+            //Do nothing, obviously it wasn't attached because an exception was thrown.
+        }
       }
     }else{
       for(AVCaptureDeviceInput* input in self.hiddenFront){
@@ -81,7 +85,11 @@ void updateAll(){
   if(self.hiddenBack){
     if(self.backCameraEnabled){
       for(AVCaptureDeviceInput* input in self.hiddenBack){
-        if([self canAddInput: input]) [self addInput: input];
+        @try{
+          [self addInput: input];
+        }@catch(id anException) {
+            //Do nothing, obviously it wasn't attached because an exception was thrown.
+        }
       }
     }else{
       for(AVCaptureDeviceInput* input in self.hiddenBack){
