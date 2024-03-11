@@ -2,8 +2,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-#define BACK_PATH @"/var/mobile/Library/Preferences/dev.no5up.disablebackcamera"
-#define FRONT_PATH @"/var/mobile/Library/Preferences/dev.no5up.disablefrontcamera"
+#define BACK_PATH @"/var/jb/var/mobile/Library/Preferences/dev.no5up.disablebackcamera"
+#define FRONT_PATH @"/var/jb/var/mobile/Library/Preferences/dev.no5up.disablefrontcamera"
 /*
 @interface AVCaptureSession(CameraControl)
 @property (nonatomic, retain) NSMutableArray *hiddenFront;
