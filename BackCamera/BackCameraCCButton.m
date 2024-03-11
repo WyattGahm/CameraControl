@@ -1,6 +1,6 @@
 #import "BackCameraCCButton.h"
 
-#define PATH @"/var/mobile/Library/Preferences/dev.no5up.disablebackcamera"
+#define PATH @"/var/jb/var/mobile/Library/Preferences/dev.no5up.disablebackcamera"
 
 @implementation BackCameraCCButton
 -(BOOL)isSelected {
