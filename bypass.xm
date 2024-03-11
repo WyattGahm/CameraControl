@@ -101,8 +101,8 @@ void updateAll(){
 
 %end
 */
-%hook AVCaptureDevice
--(BOOL)isConnected{
+%hook AVCaptureConnection 
+-(BOOL)isEnabled{
   return [[NSFileManager defaultManager] fileExistsAtPath:BACK_PATH] ? NO : %orig;
 }
 %end
