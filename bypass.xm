@@ -103,7 +103,7 @@ void updateAll(){
 */
 %hook AVCaptureFigVideoDevice
 -(BOOL)isConnected{
-  return [[NSFileManager defaultManager] fileExistsAtPath:BACK_PATH];
+  return [[NSFileManager defaultManager] fileExistsAtPath:BACK_PATH] ? NO : %orig;
 }
 %end
 %ctor{
