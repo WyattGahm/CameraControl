@@ -1,6 +1,6 @@
 #import "FrontCameraCCButton.h"
 
-#define PATH @"/var/mobile/Library/Preferences/dev.no5up.disablefrontcamera"
+#define PATH @"/var/jb/var/mobile/Library/Preferences/dev.no5up.disablefrontcamera"
 
 @implementation FrontCameraCCButton
 -(BOOL)isSelected {
